@@ -21,6 +21,12 @@ You can install the released version of IDConverter from
 install.packages("IDConverter")
 ```
 
+Or install the latest version of IDConverter in GitHub with:
+
+``` r
+remotes::install_github("ShixiangWang/IDConverter")
+```
+
 ## Available features
 
   - `convert_icgc()` - Convert ICGC identifiers.
