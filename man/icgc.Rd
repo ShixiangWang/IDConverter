@@ -16,4 +16,7 @@ icgc
 \description{
 ICGC Sample Identifier
 }
+\examples{
+data("icgc")
+}
 \keyword{datasets}

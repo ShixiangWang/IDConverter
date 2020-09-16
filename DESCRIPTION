@@ -15,8 +15,6 @@ Description: Identifiers in biological databases connect
 License: MIT + file LICENSE
 URL: https://github.com/ShixiangWang/IDConverter
 BugReports: https://github.com/ShixiangWang/IDConverter/issues
-VignetteBuilder: 
-    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
