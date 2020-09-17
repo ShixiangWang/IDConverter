@@ -18,6 +18,7 @@
 #' @testexamples
 #' expect_equal(x, "DO13695")
 #' expect_error(convert_pcawg("SA170678"))
+#' expect_error(convert_icgc("SP29019", from = "icgc_specimen_id", to = "icgc_specimen_id"))
 convert_icgc <- function(x,
                          from = "icgc_specimen_id",
                          to = "icgc_donor_id") {

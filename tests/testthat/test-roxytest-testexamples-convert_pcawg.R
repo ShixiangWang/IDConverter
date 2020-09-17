@@ -2,12 +2,14 @@
 
 context("File R/convert_pcawg.R: @testexamples")
 
-test_that("Function convert_pcawg() @ L26", {
+test_that("Function convert_pcawg() @ L28", {
   
   x <- convert_pcawg("SP1677")
   x
   
   expect_equal(x, "DO804")
   expect_error(convert_pcawg("SA5213"))
+  expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "icgc_specimen_id"))
+  expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "xx"))
 })
 
