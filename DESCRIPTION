@@ -26,4 +26,5 @@ Roxygen: list(markdown = TRUE, roclets = c("collate",
     "namespace", "rd", "roxytest::testthat_roclet"))
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat
+    testthat,
+    covr

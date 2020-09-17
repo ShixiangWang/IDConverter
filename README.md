@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Codecov test
+coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/badge.svg)](https://codecov.io/gh/ShixiangWang/IDConverter?branch=master)
 <!-- badges: end -->
 
 The goal of IDConverter is to convert identifiers between biological
