@@ -10,10 +10,14 @@
 #' @export
 #'
 #' @examples
-#' convert_icgc("SP29019")
+#' x <- convert_icgc("SP29019")
+#' x
 #' \dontrun{
 #' convert_icgc("SA170678")
 #' }
+#' @testexamples
+#' expect_equal(x, "DO13695")
+#' expect_error(convert_pcawg("SA170678"))
 convert_icgc <- function(x,
                          from = "icgc_specimen_id",
                          to = "icgc_donor_id") {

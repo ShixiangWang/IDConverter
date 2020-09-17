@@ -10,9 +10,6 @@ A data frame with 2583 rows and 12 variables.
 \source{
 \url{https://www.nature.com/articles/s41586-020-1969-6}
 }
-\usage{
-pcawg_simple
-}
 \description{
 This dataset contains less records than \code{data("pcawg_full")} but
 with more ID columns. Of note, only white-list donors included.
@@ -20,4 +17,3 @@ with more ID columns. Of note, only white-list donors included.
 \examples{
 data("pcawg_simple")
 }
-\keyword{datasets}

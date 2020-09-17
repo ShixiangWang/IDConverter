@@ -15,10 +15,14 @@
 #' @export
 #'
 #' @examples
-#' convert_pcawg("SP1677")
+#' x <- convert_pcawg("SP1677")
+#' x
 #' \dontrun{
 #' convert_pcawg("SA5213")
 #' }
+#' @testexamples
+#' expect_equal(x, "DO804")
+#' expect_error(convert_pcawg("SA5213"))
 convert_pcawg <- function(x,
                           from = "icgc_specimen_id",
                           to = "icgc_donor_id",

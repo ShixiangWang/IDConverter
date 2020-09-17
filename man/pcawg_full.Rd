@@ -10,13 +10,9 @@ A data frame with 7255 rows and 8 variables.
 \source{
 \url{https://dcc.icgc.org/releases/PCAWG}
 }
-\usage{
-pcawg_full
-}
 \description{
 PCAWG Full Sample Identifiers
 }
 \examples{
 data("pcawg_full")
 }
-\keyword{datasets}

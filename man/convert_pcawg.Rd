@@ -31,7 +31,8 @@ Run \code{data("pcawg_full")} or \code{data("pcawg_simple")} to see detail datab
 The \code{pcawg_simple} database only contains PCAWG white-list donors.
 }
 \examples{
-convert_pcawg("SP1677")
+x <- convert_pcawg("SP1677")
+x
 \dontrun{
 convert_pcawg("SA5213")
 }

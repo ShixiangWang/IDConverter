@@ -10,13 +10,9 @@ A data frame with 155874 rows and 6 variables.
 \source{
 \url{https://dcc.icgc.org/repositories}
 }
-\usage{
-icgc
-}
 \description{
 ICGC Sample Identifiers
 }
 \examples{
 data("icgc")
 }
-\keyword{datasets}
