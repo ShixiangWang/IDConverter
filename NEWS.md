@@ -1,5 +1,6 @@
 # IDConverter 0.1.0
 
+* Added `convert_custom()` to allow user construct custom database for conversion.
 * Added `convert_icgc()`.
 * Added `convert_pcawg()`.
 
