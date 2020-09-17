@@ -4,26 +4,20 @@
 \alias{convert_icgc}
 \title{Convert ICGC Identifiers}
 \usage{
-convert_icgc(
-  x,
-  from = c("icgc_specimen_id", "submitted_specimen_id", "icgc_sample_id",
-    "submitted_sample_id", "icgc_donor_id", "submitted_donor_id"),
-  to = c("icgc_donor_id", "submitted_donor_id", "icgc_specimen_id",
-    "submitted_specimen_id", "icgc_sample_id", "submitted_sample_id")
-)
+convert_icgc(x, from = "icgc_specimen_id", to = "icgc_donor_id")
 }
 \arguments{
 \item{x}{A character vector to convert.}
 
-\item{from}{Which identifier type to be converted.}
+\item{from}{Which identifier type to be converted. One of icgc_sample_id, submitted_sample_id, icgc_specimen_id, submitted_specimen_id, icgc_donor_id, submitted_donor_id.}
 
-\item{to}{Identifier type convert to.}
+\item{to}{Identifier type convert to. Same as parameter \code{from}.}
 }
 \value{
 A character vector.
 }
 \description{
-Convert ICGC Identifiers
+Run \code{data("icgc")} to see detail database for conversion.
 }
 \examples{
 convert_icgc("SP29019")

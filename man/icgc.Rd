@@ -3,7 +3,7 @@
 \docType{data}
 \name{icgc}
 \alias{icgc}
-\title{ICGC Sample Identifier}
+\title{ICGC Sample Identifiers}
 \format{
 A data frame with 155874 rows and 6 variables.
 }
@@ -14,7 +14,7 @@ A data frame with 155874 rows and 6 variables.
 icgc
 }
 \description{
-ICGC Sample Identifier
+ICGC Sample Identifiers
 }
 \examples{
 data("icgc")

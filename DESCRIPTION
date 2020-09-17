@@ -1,6 +1,7 @@
 Package: IDConverter
 Title: Convert Identifiers in Biological Databases
 Version: 0.0.0.9000
+Date: 2020-09-17
 Authors@R: 
     person(given = "Shixiang",
            family = "Wang",
@@ -9,17 +10,20 @@ Authors@R:
            comment = c(ORCID = "0000-0001-9855-7357"))
 Maintainer: Shixiang Wang <w_shixiang@163.com>
 Description: Identifiers in biological databases connect
-    different levels of metadata, phenotype data or genotype data.
-    This tool is designed to easily convert identifiers within or between
+    different levels of metadata, phenotype data or genotype data.  This
+    tool is designed to easily convert identifiers within or between
     different biological databases.
 License: MIT + file LICENSE
 URL: https://github.com/ShixiangWang/IDConverter
 BugReports: https://github.com/ShixiangWang/IDConverter/issues
-Encoding: UTF-8
-LazyData: true
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
-Imports: 
-    data.table
 Depends: 
     R (>= 2.10)
+Imports: 
+    data.table
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE, roclets = c("collate",
+    "namespace", "rd", "roxytest::testthat_roclet"))
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat

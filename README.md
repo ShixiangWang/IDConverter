@@ -30,3 +30,4 @@ remotes::install_github("ShixiangWang/IDConverter")
 ## Available features
 
   - `convert_icgc()` - Convert ICGC identifiers.
+  - `convert_pcawg()` - Convert PCAWG identifiers.
