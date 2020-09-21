@@ -34,3 +34,38 @@ remotes::install_github("ShixiangWang/IDConverter")
   - `convert_custom()` - Convert custom database identifiers.
   - `convert_icgc()` - Convert ICGC identifiers.
   - `convert_pcawg()` - Convert PCAWG identifiers.
+  - `convert_tcga()` - Convert TCGA identifiers.
+
+## Examples
+
+``` r
+library(IDConverter)
+```
+
+### TCGA
+
+``` r
+x <- convert_tcga("TCGA-02-0001-10")
+x
+#> [1] "TCGA-02-0001"
+```
+
+### PCAWG
+
+``` r
+x <- convert_pcawg("SP1677")
+x
+#> [1] "DO804"
+```
+
+### ICGC
+
+``` r
+x <- convert_icgc("SP29019")
+x
+#> [1] "DO13695"
+```
+
+## LICENSE
+
+MIT@2020, Shixiang Wang

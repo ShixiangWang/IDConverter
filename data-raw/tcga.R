@@ -2,6 +2,9 @@
 # https://bioconductor.org/packages/release/bioc/vignettes/TCGAbiolinks/inst/doc/clinical.html#Other_useful_code
 
 setwd("data-raw/")
+
+# clin <- GDCquery_clinic("TCGA-ACC", type = "biospecimen", save.csv = FALSE)
+
 library(data.table)
 library(dplyr)
 library(regexPipes)
@@ -37,16 +40,51 @@ clinical <- TCGAbiolinks:::getGDCprojects()$project_id %>%
   rbindlist(fill = TRUE) %>% setDF
 
 clinical2 <- clinical %>% dplyr::select(c(
-  "patient_id",
-  "bcr_patient_barcode", "bcr_radiation_barcode", "bcr_radiation_barcode", "bcr_drug_barcode",
-  "bcr_patient_uuid",
-  "file_uuid", "bcr_radiation_uuid", "bcr_radiation_uuid",
-  "bcr_radiation_uuid")) %>%
+  "bcr_patient_barcode")) %>%
   unique() %>%
-  dplyr::arrange(patient_id)
+  dplyr::arrange(bcr_patient_barcode)
 
 readr::write_csv(clinical2, path = "tcga_id.csv")
+# gzip it
+system("gzip tcga_id.csv")
+
+##
+setwd("../")
+getwd()
+tcga_barcode = data.table::fread("data-raw//tcga_id.csv.gz")
 
 
+## Query case metadata
+# example https://api.gdc.cancer.gov/cases?filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22submitter_id%22%2C%22value%22%3A%5B%22TCGA-02-0001%22%5D%7D%7D%5D%7D%0A%0A
+
+query_case_metadata <- function(submitter_id) {
+  jsonlite::read_json(
+    paste0(
+      "https://api.gdc.cancer.gov/cases?filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22submitter_id%22%2C%22value%22%3A%5B%22",
+      submitter_id,
+      "%22%5D%7D%7D%5D%7D%0A%0A"
+    ),
+    simplifyVector = TRUE
+  )
+}
+
+library(parallel)
+tcga_list <- mclapply(tcga_barcode$bcr_patient_barcode,
+                      query_case_metadata,
+                      mc.cores = 8L)
+
+tcga <- purrr::map_df(tcga_list, ~.$data$hits) %>% dplyr::as_tibble()
+
+saveRDS(tcga, "data-raw/tcga_metadata_for_all_cases.RDS")
+
+# To keep simple, only use submitter_id & submitter_aliquot_ids
+# case id can be viewed at the page, e.g. https://portal.gdc.cancer.gov/cases/942c0088-c9a0-428c-a879-e16f8c5bfdb8
+tcga_keep <- tcga %>%
+  dplyr::select(c("case_id", "submitter_id", "submitter_aliquot_ids")) %>%
+  tidyr::unnest("submitter_aliquot_ids") %>%
+  unique() %>%
+  dplyr::mutate(sample_id = substr(submitter_aliquot_ids, 1, 15))
+
+tcga <- data.table::as.data.table(tcga_keep)
 
 usethis::use_data(tcga, overwrite = TRUE)

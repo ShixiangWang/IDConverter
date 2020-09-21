@@ -3,4 +3,5 @@
 export(convert_custom)
 export(convert_icgc)
 export(convert_pcawg)
+export(convert_tcga)
 import(data.table)

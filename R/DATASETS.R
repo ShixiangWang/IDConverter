@@ -27,3 +27,16 @@ NULL
 #' @examples
 #' data("pcawg_simple")
 NULL
+
+#' TCGA Case Identifiers
+#'
+#' How to get the dataset can be viewed in code under `data-raw`.
+#' Cases in `case_id` column can be directly mapped to a GDC portal
+#' page, e.g. <https://portal.gdc.cancer.gov/cases/30a1fe5e-5b12-472c-aa86-c2db8167ab23>.
+#' @docType data
+#' @name tcga
+#' @format A data frame with 150849 rows and 4 variables.
+#' @source <https://portal.gdc.cancer.gov/>
+#' @examples
+#' data("tcga")
+NULL
