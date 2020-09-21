@@ -16,8 +16,8 @@ databases. Currently, I mainly use it for promoting cancer study.
 
 ## Installation
 
-You can install the released version of IDConverter from
-[CRAN](https://CRAN.R-project.org) with:
+~~You can install the released version of IDConverter from
+[CRAN](https://CRAN.R-project.org) with:~~
 
 ``` r
 install.packages("IDConverter")
