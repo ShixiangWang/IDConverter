@@ -5,7 +5,7 @@
 \alias{tcga}
 \title{TCGA Case Identifiers}
 \format{
-A data frame with 150849 rows and 4 variables.
+A data frame with 150849 rows and 5 variables.
 }
 \source{
 \url{https://portal.gdc.cancer.gov/}

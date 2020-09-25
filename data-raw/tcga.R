@@ -80,8 +80,8 @@ saveRDS(tcga, "data-raw/tcga_metadata_for_all_cases.RDS")
 # To keep simple, only use submitter_id & submitter_aliquot_ids
 # case id can be viewed at the page, e.g. https://portal.gdc.cancer.gov/cases/942c0088-c9a0-428c-a879-e16f8c5bfdb8
 tcga_keep <- tcga %>%
-  dplyr::select(c("case_id", "submitter_id", "submitter_aliquot_ids")) %>%
-  tidyr::unnest("submitter_aliquot_ids") %>%
+  dplyr::select(c("case_id", "aliquot_ids", "submitter_aliquot_ids", "submitter_id")) %>%
+  tidyr::unnest(c("submitter_aliquot_ids", "aliquot_ids")) %>%
   unique() %>%
   dplyr::mutate(sample_id = substr(submitter_aliquot_ids, 1, 15))
 

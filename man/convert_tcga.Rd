@@ -9,7 +9,7 @@ convert_tcga(x, from = "sample_id", to = "submitter_id")
 \arguments{
 \item{x}{A character vector to convert.}
 
-\item{from}{Which identifier type to be converted. One of case_id, submitter_id, submitter_aliquot_ids, sample_id.}
+\item{from}{Which identifier type to be converted. One of case_id, aliquot_ids, submitter_aliquot_ids, submitter_id, sample_id.}
 
 \item{to}{Identifier type convert to. Same as parameter \code{from}.}
 }
