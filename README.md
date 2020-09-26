@@ -5,10 +5,10 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Codecov test
 coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/badge.svg)](https://codecov.io/gh/ShixiangWang/IDConverter?branch=master)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 <!-- badges: end -->
 
 The goal of IDConverter is to convert identifiers between biological
@@ -27,6 +27,12 @@ Or install the latest version of IDConverter in GitHub with:
 
 ``` r
 remotes::install_github("ShixiangWang/IDConverter")
+```
+
+Or Gitee (better in China):
+
+``` r
+remotes::install_git("https://gitee.com/ShixiangWang/IDConverter")
 ```
 
 ## Available features
@@ -65,6 +71,12 @@ x <- convert_icgc("SP29019")
 x
 #> [1] "DO13695"
 ```
+
+## Similar package
+
+  - [AnnoProbe](https://github.com/jmzeng1314/AnnoProbe/) ([Gitee
+    mirror](https://gitee.com/jmzeng/annoprobe)) is an R package for
+    transforming Chips probes to different Gene IDs.
 
 ## LICENSE
 
