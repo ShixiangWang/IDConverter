@@ -4,7 +4,7 @@
 \alias{convert_tcga}
 \title{Convert TCGA Identifiers}
 \usage{
-convert_tcga(x, from = "sample_id", to = "submitter_id")
+convert_tcga(x, from = "sample_id", to = "submitter_id", multiple = FALSE)
 }
 \arguments{
 \item{x}{A character vector to convert.}
@@ -12,6 +12,9 @@ convert_tcga(x, from = "sample_id", to = "submitter_id")
 \item{from}{Which identifier type to be converted. One of case_id, aliquot_ids, submitter_aliquot_ids, submitter_id, sample_id.}
 
 \item{to}{Identifier type convert to. Same as parameter \code{from}.}
+
+\item{multiple}{if \code{TRUE}, return a \code{data.table} instead of a
+string vector, so multiple identifier mappings can be kept.}
 }
 \value{
 A character vector.

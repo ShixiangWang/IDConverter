@@ -4,7 +4,7 @@
 \alias{convert_custom}
 \title{Convert Identifiers with Custom Database}
 \usage{
-convert_custom(x, from = NULL, to = NULL, dt = NULL)
+convert_custom(x, from = NULL, to = NULL, dt = NULL, multiple = FALSE)
 }
 \arguments{
 \item{x}{A character vector to convert.}
@@ -14,6 +14,9 @@ convert_custom(x, from = NULL, to = NULL, dt = NULL)
 \item{to}{Identifier type convert to.}
 
 \item{dt}{A \code{data.frame} as database for conversion.}
+
+\item{multiple}{if \code{TRUE}, return a \code{data.table} instead of a
+string vector, so multiple identifier mappings can be kept.}
 }
 \value{
 A character vector.

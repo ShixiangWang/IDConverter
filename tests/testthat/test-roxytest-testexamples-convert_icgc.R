@@ -2,7 +2,7 @@
 
 context("File R/convert_icgc.R: @testexamples")
 
-test_that("Function convert_icgc() @ L22", {
+test_that("Function convert_icgc() @ L23", {
   
   x <- convert_icgc("SP29019")
   x

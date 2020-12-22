@@ -8,7 +8,8 @@ convert_pcawg(
   x,
   from = "icgc_specimen_id",
   to = "icgc_donor_id",
-  db = c("full", "simple")
+  db = c("full", "simple"),
+  multiple = FALSE
 )
 }
 \arguments{
@@ -22,6 +23,9 @@ For db "simple", one of tumour_specimen_aliquot_id, normal_specimen_aliquot_id, 
 
 \item{db}{Database, one of "full" (for \code{data("pcawg_full")}) or
 "simple" (for \code{data("pcawg_simple")}).}
+
+\item{multiple}{if \code{TRUE}, return a \code{data.table} instead of a
+string vector, so multiple identifier mappings can be kept.}
 }
 \value{
 A character vector.
@@ -33,6 +37,12 @@ The \code{pcawg_simple} database only contains PCAWG white-list donors.
 \examples{
 x <- convert_pcawg("SP1677")
 x
+
+y <- convert_pcawg("DO804",
+  from = "icgc_donor_id",
+  to = "icgc_specimen_id", multiple = TRUE
+)
+y
 \dontrun{
 convert_pcawg("SA5213")
 }

@@ -2,7 +2,7 @@
 
 context("File R/convert_custom.R: @testexamples")
 
-test_that("Function convert_custom() @ L19", {
+test_that("Function convert_custom() @ L21", {
   
   dt <- data.table::data.table(UpperCase = LETTERS[1:5], LowerCase = letters[1:5])
   dt

@@ -1,6 +1,6 @@
 Package: IDConverter
 Title: Convert Identifiers in Biological Databases
-Version: 0.0.0.9000
+Version: 0.1.1
 Date: 2020-09-17
 Authors@R: 
     person(given = "Shixiang",
@@ -20,11 +20,11 @@ Depends:
     R (>= 2.10)
 Imports: 
     data.table
+Suggests: 
+    covr,
+    testthat
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE, roclets = c("collate",
     "namespace", "rd", "roxytest::testthat_roclet"))
 RoxygenNote: 7.1.1
-Suggests: 
-    testthat,
-    covr

@@ -3,6 +3,7 @@
 #' Run `data("pcawg_full")` or `data("pcawg_simple")` to see detail database for conversion.
 #' The `pcawg_simple` database only contains PCAWG white-list donors.
 #'
+#' @inheritParams convert_custom
 #' @param x A character vector to convert.
 #' @param from Which identifier type to be converted.
 #' For db "full", one of `r paste(colnames(pcawg_full), collapse = ", ")`.
@@ -17,6 +18,12 @@
 #' @examples
 #' x <- convert_pcawg("SP1677")
 #' x
+#'
+#' y <- convert_pcawg("DO804",
+#'   from = "icgc_donor_id",
+#'   to = "icgc_specimen_id", multiple = TRUE
+#' )
+#' y
 #' \dontrun{
 #' convert_pcawg("SA5213")
 #' }
@@ -25,10 +32,12 @@
 #' expect_error(convert_pcawg("SA5213"))
 #' expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "icgc_specimen_id"))
 #' expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "xx"))
+#' expect_is(y, "data.table")
 convert_pcawg <- function(x,
                           from = "icgc_specimen_id",
                           to = "icgc_donor_id",
-                          db = c("full", "simple")) {
+                          db = c("full", "simple"),
+                          multiple = FALSE) {
   db <- match.arg(db)
   db <- switch(db,
     full = "pcawg_full",
@@ -41,5 +50,5 @@ convert_pcawg <- function(x,
   }
 
   dt <- get(db, envir = as.environment("package:IDConverter"))
-  convert(dt, x, from, to)
+  convert(dt, x, from, to, multiple)
 }

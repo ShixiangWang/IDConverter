@@ -1,3 +1,7 @@
+# IDConverter 0.1.1
+
+* Added `multiple` option to return a map `data.table`.
+
 # IDConverter 0.1.0
 
 * Added `convert_custom()` to allow user construct custom database for conversion.

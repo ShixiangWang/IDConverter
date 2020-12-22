@@ -4,7 +4,12 @@
 \alias{convert_icgc}
 \title{Convert ICGC Identifiers}
 \usage{
-convert_icgc(x, from = "icgc_specimen_id", to = "icgc_donor_id")
+convert_icgc(
+  x,
+  from = "icgc_specimen_id",
+  to = "icgc_donor_id",
+  multiple = FALSE
+)
 }
 \arguments{
 \item{x}{A character vector to convert.}
@@ -12,6 +17,9 @@ convert_icgc(x, from = "icgc_specimen_id", to = "icgc_donor_id")
 \item{from}{Which identifier type to be converted. One of icgc_sample_id, submitted_sample_id, icgc_specimen_id, submitted_specimen_id, icgc_donor_id, submitted_donor_id.}
 
 \item{to}{Identifier type convert to. Same as parameter \code{from}.}
+
+\item{multiple}{if \code{TRUE}, return a \code{data.table} instead of a
+string vector, so multiple identifier mappings can be kept.}
 }
 \value{
 A character vector.
