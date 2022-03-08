@@ -6,9 +6,9 @@
 <!-- badges: start -->
 
 [![Codecov test
-coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/badge.svg)](https://codecov.io/gh/ShixiangWang/IDConverter?branch=master)
+coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ShixiangWang/IDConverter?branch=master)
 [![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 <!-- badges: end -->
 
 The goal of IDConverter is to convert identifiers between biological
