@@ -25,7 +25,7 @@ Currently, I mainly use it for promoting cancer study.
 
 ## Installation
 
-~~You can install the released version of IDConverter from [CRAN](https://CRAN.R-project.org) with:~~
+You can install the released version of IDConverter from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("IDConverter")
@@ -45,10 +45,17 @@ remotes::install_git("https://gitee.com/ShixiangWang/IDConverter")
 
 ## Available features
 
+ID convertions:
+
 - `convert_custom()` - Convert custom database identifiers.
 - `convert_icgc()` - Convert ICGC identifiers.
 - `convert_pcawg()` - Convert PCAWG identifiers.
 - `convert_tcga()` - Convert TCGA identifiers.
+
+Others:
+
+- `parse_gdc_file_uuid()` - Parse Metadata from GDC Portal File UUID.
+- `filter_tcga_barcodes()` - Filter TCGA Replicate Sample Barcodes.
 
 ## Examples
 
@@ -78,6 +85,14 @@ x <- convert_icgc("SP29019")
 x
 ```
 
+
+## Citation
+
+***Wang S, Li H, Song M, Tao Z, Wu T, He Z, et al. (2021) Copy
+number signature analysis tool and its application in prostate
+cancer reveals distinct mutational processes and clinical outcomes.
+PLoS Genet 17(5): e1009557.***
+<https://doi.org/10.1371/journal.pgen.1009557>
 
 ## Similar package
 

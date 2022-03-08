@@ -21,7 +21,13 @@ parse_gdc_file_uuid <- function(x) {
   message("Querying info from GDC portal API: https://api.gdc.cancer.gov")
 
   x <- sprintf("https://api.gdc.cancer.gov/files/%s?format=tsv", x)
-  data.table::rbindlist(lapply(x, function(x) {
-    suppressMessages(content(GET(x), type = "text/tab-separated-values", encoding = "UTF-8"))
-  }), use.names = TRUE, fill = TRUE)
+  tryCatch(
+    data.table::rbindlist(lapply(x, function(x) {
+      suppressMessages(content(GET(x), type = "text/tab-separated-values", encoding = "UTF-8"))
+    }), use.names = TRUE, fill = TRUE),
+    error = function(e) {
+      message("The GDC API seems not working, try later again?")
+      NULL
+    }
+  )
 }

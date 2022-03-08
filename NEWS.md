@@ -1,7 +1,7 @@
 # IDConverter 0.2.0
 
-* Leaved all data to Zenodo `https://zenodo.org/record/6336671` to keep this package smaller.
-
+* Added `filter_tcga_barcodes` for TCGA barcode filtering.
+* Moved all data to Zenodo `https://zenodo.org/record/6336671` to keep this package smaller.
 
 # IDConverter 0.1.1
 

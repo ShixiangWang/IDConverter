@@ -5,3 +5,4 @@
 ^README\.Rmd$
 ^codecov\.yml$
 inst/extdata/icgc.rda
+^CRAN-SUBMISSION$
