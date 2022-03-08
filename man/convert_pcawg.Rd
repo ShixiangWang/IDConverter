@@ -16,8 +16,8 @@ convert_pcawg(
 \item{x}{A character vector to convert.}
 
 \item{from}{Which identifier type to be converted.
-For db "full", one of donor_unique_id, submitter_donor_id, icgc_donor_id, aliquot_id, submitter_specimen_id, icgc_specimen_id, submitter_sample_id, icgc_sample_id.
-For db "simple", one of tumour_specimen_aliquot_id, normal_specimen_aliquot_id, donor_unique_id, submitted_donor_id, icgc_donor_id, icgc_sample_id, icgc_specimen_id, submitted_specimen_id, submitted_sample_id, tcga_specimen_uuid, tcga_sample_uuid, tcga_donor_uuid.}
+For db "full", one of .
+For db "simple", one of .}
 
 \item{to}{Identifier type convert to. Same as parameter \code{from}.}
 

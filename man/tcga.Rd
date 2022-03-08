@@ -16,5 +16,7 @@ Cases in \code{case_id} column can be directly mapped to a GDC portal
 page, e.g. \url{https://portal.gdc.cancer.gov/cases/30a1fe5e-5b12-472c-aa86-c2db8167ab23}.
 }
 \examples{
-data("tcga")
+\donttest{
+load_data("tcga")
+}
 }

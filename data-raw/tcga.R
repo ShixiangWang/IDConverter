@@ -11,36 +11,43 @@ library(regexPipes)
 library(TCGAbiolinks)
 
 # This code will get all clinical XML data from TCGA
-getclinical <- function(proj){
+getclinical <- function(proj) {
   message(proj)
-  while(1){
-    result = tryCatch({
-      query <- GDCquery(project = proj, data.category = "Clinical",file.type = "xml")
-      GDCdownload(query)
-      clinical <- GDCprepare_clinic(query, clinical.info = "patient")
-      for(i in c("admin","radiation","follow_up","drug","new_tumor_event")){
-        message(i)
-        aux <- GDCprepare_clinic(query, clinical.info = i)
-        if(is.null(aux) || nrow(aux) == 0) next
-        # add suffix manually if it already exists
-        replicated <- which(grep("bcr_patient_barcode",colnames(aux), value = T,invert = T) %in% colnames(clinical))
-        colnames(aux)[replicated] <- paste0(colnames(aux)[replicated],".",i)
-        if(!is.null(aux)) clinical <- merge(clinical,aux,by = "bcr_patient_barcode", all = TRUE)
+  while (1) {
+    result <- tryCatch(
+      {
+        query <- GDCquery(project = proj, data.category = "Clinical", file.type = "xml")
+        GDCdownload(query)
+        clinical <- GDCprepare_clinic(query, clinical.info = "patient")
+        for (i in c("admin", "radiation", "follow_up", "drug", "new_tumor_event")) {
+          message(i)
+          aux <- GDCprepare_clinic(query, clinical.info = i)
+          if (is.null(aux) || nrow(aux) == 0) next
+          # add suffix manually if it already exists
+          replicated <- which(grep("bcr_patient_barcode", colnames(aux), value = T, invert = T) %in% colnames(clinical))
+          colnames(aux)[replicated] <- paste0(colnames(aux)[replicated], ".", i)
+          if (!is.null(aux)) clinical <- merge(clinical, aux, by = "bcr_patient_barcode", all = TRUE)
+        }
+        readr::write_csv(clinical, path = paste0(proj, "_clinical_from_XML.csv")) # Save the clinical data into a csv file
+        return(clinical)
+      },
+      error = function(e) {
+        message(paste0("Error clinical: ", proj))
       }
-      readr::write_csv(clinical,path = paste0(proj,"_clinical_from_XML.csv")) # Save the clinical data into a csv file
-      return(clinical)
-    }, error = function(e) {
-      message(paste0("Error clinical: ", proj))
-    })
+    )
   }
 }
 clinical <- TCGAbiolinks:::getGDCprojects()$project_id %>%
-  regexPipes::grep("TCGA",value=T) %>% sort %>%
-  plyr::alply(1,getclinical, .progress = "text") %>%
-  rbindlist(fill = TRUE) %>% setDF
+  regexPipes::grep("TCGA", value = T) %>%
+  sort() %>%
+  plyr::alply(1, getclinical, .progress = "text") %>%
+  rbindlist(fill = TRUE) %>%
+  setDF()
 
-clinical2 <- clinical %>% dplyr::select(c(
-  "bcr_patient_barcode")) %>%
+clinical2 <- clinical %>%
+  dplyr::select(c(
+    "bcr_patient_barcode"
+  )) %>%
   unique() %>%
   dplyr::arrange(bcr_patient_barcode)
 
@@ -51,7 +58,7 @@ system("gzip tcga_id.csv")
 ##
 setwd("../")
 getwd()
-tcga_barcode = data.table::fread("data-raw//tcga_id.csv.gz")
+tcga_barcode <- data.table::fread("data-raw//tcga_id.csv.gz")
 
 
 ## Query case metadata
@@ -70,10 +77,11 @@ query_case_metadata <- function(submitter_id) {
 
 library(parallel)
 tcga_list <- mclapply(tcga_barcode$bcr_patient_barcode,
-                      query_case_metadata,
-                      mc.cores = 8L)
+  query_case_metadata,
+  mc.cores = 8L
+)
 
-tcga <- purrr::map_df(tcga_list, ~.$data$hits) %>% dplyr::as_tibble()
+tcga <- purrr::map_df(tcga_list, ~ .$data$hits) %>% dplyr::as_tibble()
 
 saveRDS(tcga, "data-raw/tcga_metadata_for_all_cases.RDS")
 

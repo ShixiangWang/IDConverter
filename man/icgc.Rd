@@ -14,5 +14,7 @@ A data frame with 155874 rows and 6 variables.
 ICGC Sample Identifiers
 }
 \examples{
-data("icgc")
+\donttest{
+load_data("icgc")
+}
 }

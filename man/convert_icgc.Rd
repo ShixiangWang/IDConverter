@@ -14,7 +14,7 @@ convert_icgc(
 \arguments{
 \item{x}{A character vector to convert.}
 
-\item{from}{Which identifier type to be converted. One of icgc_sample_id, submitted_sample_id, icgc_specimen_id, submitted_specimen_id, icgc_donor_id, submitted_donor_id.}
+\item{from}{Which identifier type to be converted. One of .}
 
 \item{to}{Identifier type convert to. Same as parameter \code{from}.}
 

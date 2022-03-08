@@ -28,6 +28,6 @@ convert_tcga <- function(x,
     stop("from and to cannot be same.")
   }
 
-  dt <- get("tcga", envir = as.environment("package:IDConverter"))
+  dt <- load_data("tcga")
   convert(dt, x, from, to, multiple)
 }

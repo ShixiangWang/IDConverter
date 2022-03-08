@@ -14,5 +14,7 @@ A data frame with 7255 rows and 8 variables.
 PCAWG Full Sample Identifiers
 }
 \examples{
-data("pcawg_full")
+\donttest{
+load_data("pcawg_full")
+}
 }

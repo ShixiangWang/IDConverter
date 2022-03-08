@@ -4,3 +4,4 @@
 data-raw/GDCdata/
 data-raw/tcga_metadata_for_all_cases.RDS
 data-raw/.Rapp.history
+inst/extdata/*.rda

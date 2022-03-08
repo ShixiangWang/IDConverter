@@ -29,6 +29,6 @@ convert_icgc <- function(x,
     stop("from and to cannot be same.")
   }
 
-  dt <- get("icgc", envir = as.environment("package:IDConverter"))
+  dt <- load_data("icgc")
   convert(dt, x, from, to, multiple)
 }

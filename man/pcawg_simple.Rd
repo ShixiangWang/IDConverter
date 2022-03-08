@@ -15,5 +15,7 @@ This dataset contains less records than \code{data("pcawg_full")} but
 with more ID columns. Of note, only white-list donors included.
 }
 \examples{
-data("pcawg_simple")
+\donttest{
+load_data("pcawg_simple")
+}
 }

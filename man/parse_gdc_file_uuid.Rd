@@ -18,7 +18,9 @@ Parse Metadata from GDC Portal File UUID
 \examples{
 parse_gdc_file_uuid("874e71e0-83dd-4d3e-8014-10141b49f12c")
 parse_gdc_file_uuid(
-  c("874e71e0-83dd-4d3e-8014-10141b49f12c",
-  "2c16506f-1110-4d60-81e3-a85233c79909")
+  c(
+    "874e71e0-83dd-4d3e-8014-10141b49f12c",
+    "2c16506f-1110-4d60-81e3-a85233c79909"
+  )
 )
 }

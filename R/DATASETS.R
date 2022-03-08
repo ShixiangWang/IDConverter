@@ -4,7 +4,9 @@
 #' @format A data frame with 155874 rows and 6 variables.
 #' @source <https://dcc.icgc.org/repositories>
 #' @examples
-#' data("icgc")
+#' \donttest{
+#' load_data("icgc")
+#' }
 NULL
 
 #' PCAWG Full Sample Identifiers
@@ -13,7 +15,9 @@ NULL
 #' @format A data frame with 7255 rows and 8 variables.
 #' @source <https://dcc.icgc.org/releases/PCAWG>
 #' @examples
-#' data("pcawg_full")
+#' \donttest{
+#' load_data("pcawg_full")
+#' }
 NULL
 
 #' PCAWG Mutation Related Simplified Sample Identifiers
@@ -25,7 +29,9 @@ NULL
 #' @format A data frame with 2583 rows and 12 variables.
 #' @source <https://www.nature.com/articles/s41586-020-1969-6>
 #' @examples
-#' data("pcawg_simple")
+#' \donttest{
+#' load_data("pcawg_simple")
+#' }
 NULL
 
 #' TCGA Case Identifiers
@@ -38,5 +44,7 @@ NULL
 #' @format A data frame with 150849 rows and 5 variables.
 #' @source <https://portal.gdc.cancer.gov/>
 #' @examples
-#' data("tcga")
+#' \donttest{
+#' load_data("tcga")
+#' }
 NULL

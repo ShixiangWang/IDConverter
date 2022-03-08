@@ -1,5 +1,11 @@
+# IDConverter 0.2.0
+
+* Leaved all data to Zenodo `https://zenodo.org/record/6336671` to keep this package smaller.
+
+
 # IDConverter 0.1.1
 
+* Added `parse_gdc_file_uuid()` to "Parse Metadata from GDC Portal File UUID".
 * Added `multiple` option to return a map `data.table`.
 
 # IDConverter 0.1.0

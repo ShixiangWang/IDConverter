@@ -49,6 +49,6 @@ convert_pcawg <- function(x,
     stop("from and to cannot be same.")
   }
 
-  dt <- get(db, envir = as.environment("package:IDConverter"))
+  dt <- load_data(db)
   convert(dt, x, from, to, multiple)
 }
