@@ -48,7 +48,7 @@ remotes::install_git("https://gitee.com/ShixiangWang/IDConverter")
 
 ## Available features
 
-ID convertions:
+**ID conversions**:
 
 - `convert_custom()` - Convert custom database identifiers.
 - `convert_icgc()` - Convert ICGC identifiers.
@@ -56,7 +56,11 @@ ID convertions:
 - `convert_tcga()` - Convert TCGA identifiers.
 - `convert_hm_genes()` - Convert human/mouse gene IDs between Ensembl and Hugo Symbol system.
 
-Others:
+Annotation tables from [annotables](https://github.com/stephenturner/annotables) are available
+in this package, you can use `ls_annotables()` to print the table list and then use
+`load_data()` to download and load the data into R for conversion operation.
+
+**Others**:
 
 - `parse_gdc_file_uuid()` - Parse Metadata from GDC Portal File UUID.
 - `filter_tcga_barcodes()` - Filter TCGA Replicate Sample Barcodes.
@@ -87,6 +91,19 @@ x
 ```{r}
 x <- convert_icgc("SP29019")
 x
+```
+
+### Genes
+
+```{r}
+convert_hm_genes(c("TP53", "KRAS", "EGFR", "MYC"), type = "symbol")
+
+# Or use data from annotables
+ls_annotables()
+grch37 = load_data("grch37")
+head(grch37)
+convert_custom(c("TP53", "KRAS", "EGFR", "MYC"),
+               from = "symbol", to = "entrez", dt = grch37)
 ```
 
 

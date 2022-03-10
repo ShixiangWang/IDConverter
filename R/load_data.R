@@ -1,6 +1,6 @@
 # Copy from sigminer
 query_remote_data <- function(x) {
-  x_url <- paste0("https://zenodo.org/record/6336671/files/", x)
+  x_url <- paste0("https://zenodo.org/record/6342397/files/", x)
   dir_dest <- system.file("extdata", package = "IDConverter")
   # if (!dir.exists(dir_dest)) dir.create(dir_dest, recursive = TRUE)
   x_dest <- file.path(dir_dest, x)
@@ -21,6 +21,9 @@ query_remote_data <- function(x) {
 }
 
 #' Load Data from Local or Remote Zenodo Repository
+#'
+#' Data are stored in remote [Zenodo repo](https://zenodo.org/record/6342397).
+#' This function will help download required data and load it into R.
 #'
 #' @param x a dataset name.
 #'

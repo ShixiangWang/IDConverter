@@ -13,7 +13,8 @@ load_data(x)
 typically a \code{data.frame}, depends on \code{x}.
 }
 \description{
-Load Data from Local or Remote Zenodo Repository
+Data are stored in remote \href{https://zenodo.org/record/6342397}{Zenodo repo}.
+This function will help download required data and load it into R.
 }
 \examples{
 \donttest{
