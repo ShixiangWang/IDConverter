@@ -1,3 +1,7 @@
+# IDConverter 0.3.0
+
+* Added `convert_hm_genes()` - Convert human/mouse gene IDs between Ensembl and Hugo Symbol system.
+
 # IDConverter 0.2.0
 
 * Added `filter_tcga_barcodes` for TCGA barcode filtering.

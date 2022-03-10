@@ -5,10 +5,13 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/IDConverter)](https://cran.r-project.org/package=IDConverter)
 [![Codecov test
 coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ShixiangWang/IDConverter?branch=master)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/IDConverter?color=orange)](https://cran.r-project.org/package=IDConverter)
 <!-- badges: end -->
 
 The goal of IDConverter is to convert identifiers between biological
@@ -43,6 +46,8 @@ ID convertions:
 -   `convert_icgc()` - Convert ICGC identifiers.
 -   `convert_pcawg()` - Convert PCAWG identifiers.
 -   `convert_tcga()` - Convert TCGA identifiers.
+-   `convert_hm_genes()` - Convert human/mouse gene IDs between Ensembl
+    and Hugo Symbol system.
 
 Others:
 
