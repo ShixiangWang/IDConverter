@@ -11,8 +11,10 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' x <- convert_icgc("SP29019")
 #' x
+#' }
 #' \dontrun{
 #' convert_icgc("SA170678")
 #' }

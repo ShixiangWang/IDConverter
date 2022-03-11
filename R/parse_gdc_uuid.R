@@ -7,6 +7,7 @@
 #' @export
 #'
 #' @examples
+#'
 #' parse_gdc_file_uuid("874e71e0-83dd-4d3e-8014-10141b49f12c")
 #' parse_gdc_file_uuid(
 #'   c(

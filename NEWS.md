@@ -1,5 +1,6 @@
 # IDConverter 0.3.0
 
+* Used tempdir as user default data directory.
 * Supported [annotables](https://github.com/stephenturner/annotables) annotation data tables by combining newly created `ls_annotables()` and `load_data()`.
 * Added `convert_hm_genes()` - Convert human/mouse gene IDs between Ensembl and Hugo Symbol system.
 

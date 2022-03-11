@@ -23,8 +23,10 @@ A character vector.
 Run \code{data("tcga")} to see detail database for conversion.
 }
 \examples{
+\donttest{
 x <- convert_tcga("TCGA-02-0001-10")
 x
+}
 \dontrun{
 convert_tcga("TCGA-02-0001-10A-01W-0188-10")
 }

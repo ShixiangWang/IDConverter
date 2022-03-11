@@ -35,6 +35,7 @@ Run \code{data("pcawg_full")} or \code{data("pcawg_simple")} to see detail datab
 The \code{pcawg_simple} database only contains PCAWG white-list donors.
 }
 \examples{
+\donttest{
 x <- convert_pcawg("SP1677")
 x
 
@@ -43,6 +44,7 @@ y <- convert_pcawg("DO804",
   to = "icgc_specimen_id", multiple = TRUE
 )
 y
+}
 \dontrun{
 convert_pcawg("SA5213")
 }

@@ -2,7 +2,8 @@
 
 # File R/convert_pcawg.R: @testexamples
 
-test_that("Function convert_pcawg() @ L36", {
+test_that("Function convert_pcawg() @ L38", {
+  
   
   x <- convert_pcawg("SP1677")
   x
@@ -12,6 +13,7 @@ test_that("Function convert_pcawg() @ L36", {
     to = "icgc_specimen_id", multiple = TRUE
   )
   y
+  
   
   expect_equal(x, "DO804")
   expect_error(convert_pcawg("SA5213"))

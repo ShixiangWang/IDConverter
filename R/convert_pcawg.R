@@ -16,6 +16,7 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' x <- convert_pcawg("SP1677")
 #' x
 #'
@@ -24,6 +25,7 @@
 #'   to = "icgc_specimen_id", multiple = TRUE
 #' )
 #' y
+#' }
 #' \dontrun{
 #' convert_pcawg("SA5213")
 #' }

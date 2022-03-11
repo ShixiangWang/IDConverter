@@ -2,10 +2,12 @@
 
 # File R/convert_tcga.R: @testexamples
 
-test_that("Function convert_tcga() @ L22", {
+test_that("Function convert_tcga() @ L24", {
+  
   
   x <- convert_tcga("TCGA-02-0001-10")
   x
+  
   
   expect_equal(x, "TCGA-02-0001")
   expect_error(convert_pcawg("TCGA-02-0001-10A-01W-0188-10"))

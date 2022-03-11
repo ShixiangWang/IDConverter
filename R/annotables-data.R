@@ -36,14 +36,16 @@
 #' ls_annotables()
 #' load_data(ls_annotables()[1])
 #' }
-ls_annotables = function() {
+ls_annotables <- function() {
   message("Version: ", load_data("ensembl_version"))
-  c("bdgp6", "bdgp6_tx2gene",
+  c(
+    "bdgp6", "bdgp6_tx2gene",
     "galgal5", "galgal5_tx2gene",
     "grch37", "grch37_tx2gene",
     "grch38", "grch38_tx2gene",
     "grcm38", "grcm38_tx2gene",
     "mmul801", "mmul801_tx2gene",
     "rnor6", "rnor6_tx2gene",
-    "wbcel235", "wbcel235_tx2gene")
+    "wbcel235", "wbcel235_tx2gene"
+  )
 }

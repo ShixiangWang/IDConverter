@@ -28,8 +28,10 @@ A character vector.
 Run \code{data("icgc")} to see detail database for conversion.
 }
 \examples{
+\donttest{
 x <- convert_icgc("SP29019")
 x
+}
 \dontrun{
 convert_icgc("SA170678")
 }

@@ -66,6 +66,16 @@ conversion operation.
 library(IDConverter)
 ```
 
+To follow the CRAN policy, I have to set `tempdir()` as default data
+path, however, I recommend you set the data path to a specified path
+with `options(IDConverter.datapath)`.
+
+e.g.,
+
+``` r
+options(IDConverter.datapath = system.file("extdata", package = "IDConverter"))
+```
+
 ### TCGA
 
 ``` r
