@@ -12,6 +12,7 @@ coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/bad
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/IDConverter?color=orange)](https://cran.r-project.org/package=IDConverter)
+[![Gitter](https://badges.gitter.im/ShixiangWang/community.svg)](https://gitter.im/ShixiangWang/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 <!-- badges: end -->
 
 The goal of IDConverter is to convert identifiers between biological
@@ -80,7 +81,6 @@ options(IDConverter.datapath = system.file("extdata", package = "IDConverter"))
 
 ``` r
 x <- convert_tcga("TCGA-02-0001-10")
-#> Downloading https://zenodo.org/record/6342397/files/tcga.rda to D:/Rlib/IDConverter/extdata/tcga.rda
 x
 #> [1] "TCGA-02-0001"
 ```
@@ -89,7 +89,6 @@ x
 
 ``` r
 x <- convert_pcawg("SP1677")
-#> Downloading https://zenodo.org/record/6342397/files/pcawg_full.rda to D:/Rlib/IDConverter/extdata/pcawg_full.rda
 x
 #> [1] "DO804"
 ```
@@ -106,7 +105,6 @@ x
 
 ``` r
 convert_hm_genes(c("TP53", "KRAS", "EGFR", "MYC"), type = "symbol")
-#> Downloading https://zenodo.org/record/6342397/files/human_hg38_gene_info.rds to D:/Rlib/IDConverter/extdata/human_hg38_gene_info.rds
 #> [1] "ENSG00000141510" "ENSG00000133703" "ENSG00000146648" "ENSG00000136997"
 
 # Or use data from annotables
@@ -118,20 +116,15 @@ ls_annotables()
 #> [13] "rnor6"            "rnor6_tx2gene"    "wbcel235"         "wbcel235_tx2gene"
 grch37 = load_data("grch37")
 head(grch37)
-#>           ensgene entrez   symbol chr     start       end strand        biotype
-#> 1 ENSG00000000003   7105   TSPAN6   X 100627108 100639991     -1 protein_coding
-#> 2 ENSG00000000005  64102     TNMD   X 100584936 100599885      1 protein_coding
-#> 3 ENSG00000000419   8813     DPM1  20  50934867  50959140     -1 protein_coding
-#> 4 ENSG00000000457  57147    SCYL3   1 169849631 169894267     -1 protein_coding
-#> 5 ENSG00000000460  55732 C1orf112   1 169662007 169854080      1 protein_coding
-#> 6 ENSG00000000938   2268      FGR   1  27612064  27635185     -1 protein_coding
-#>                                                   description
-#> 1                                               tetraspanin 6
-#> 2                                                 tenomodulin
-#> 3 dolichyl-phosphate mannosyltransferase subunit 1, catalytic
-#> 4                                    SCY1 like pseudokinase 3
-#> 5                         chromosome 1 open reading frame 112
-#> 6              FGR proto-oncogene, Src family tyrosine kinase
+#> # A tibble: 6 × 9
+#>   ensgene         entrez symbol   chr    start    end strand biotype description
+#>   <chr>            <int> <chr>    <chr>  <int>  <int>  <int> <chr>   <chr>      
+#> 1 ENSG00000000003   7105 TSPAN6   X     1.01e8 1.01e8     -1 protei… tetraspani…
+#> 2 ENSG00000000005  64102 TNMD     X     1.01e8 1.01e8      1 protei… tenomodulin
+#> 3 ENSG00000000419   8813 DPM1     20    5.09e7 5.10e7     -1 protei… dolichyl-p…
+#> 4 ENSG00000000457  57147 SCYL3    1     1.70e8 1.70e8     -1 protei… SCY1 like …
+#> 5 ENSG00000000460  55732 C1orf112 1     1.70e8 1.70e8      1 protei… chromosome…
+#> 6 ENSG00000000938   2268 FGR      1     2.76e7 2.76e7     -1 protei… FGR proto-…
 convert_custom(c("TP53", "KRAS", "EGFR", "MYC"),
                from = "symbol", to = "entrez", dt = grch37)
 #> [1] "7157" "3845" "1956" "4609"
