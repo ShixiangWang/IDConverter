@@ -64,6 +64,6 @@ parse_gdc_file_uuid <- function(x, legacy = FALSE, token = NULL, max_try = 5L) {
   #                  body = body, encode = "json")
   httr::stop_for_status(response)
   rv <- httr::content(response, show_col_types = FALSE)
-  colnames(rv)[1] <- "sample"
+  colnames(rv)[seq_len(ncol(rv)-2)] <- paste0("sample", c("", seq_len(ncol(rv) - 3)))
   rv
 }
