@@ -2,25 +2,31 @@
 % Please edit documentation in R/parse_gdc_uuid.R
 \name{parse_gdc_file_uuid}
 \alias{parse_gdc_file_uuid}
-\title{Parse Metadata from GDC Portal File UUID}
+\title{Parse Sample ID from GDC Portal File UUID}
 \usage{
-parse_gdc_file_uuid(x)
+parse_gdc_file_uuid(x, legacy = FALSE, token = NULL, max_try = 5L)
 }
 \arguments{
 \item{x}{a GDC manifest file or a vector of file UUIDs.}
+
+\item{legacy}{if use GDC legacy data.}
+
+\item{token}{the token used for querying.}
+
+\item{max_try}{maximum try time.}
 }
 \value{
 a \code{data.frame}
 }
 \description{
-Parse Metadata from GDC Portal File UUID
+Parse Sample ID from GDC Portal File UUID
 }
 \examples{
 
-parse_gdc_file_uuid("874e71e0-83dd-4d3e-8014-10141b49f12c")
+parse_gdc_file_uuid("fe522fc8-e690-49b9-b3b6-fa3658705057")
 parse_gdc_file_uuid(
   c(
-    "874e71e0-83dd-4d3e-8014-10141b49f12c",
+    "fe522fc8-e690-49b9-b3b6-fa3658705057",
     "2c16506f-1110-4d60-81e3-a85233c79909"
   )
 )
