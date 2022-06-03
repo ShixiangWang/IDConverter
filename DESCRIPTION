@@ -1,6 +1,6 @@
 Package: IDConverter
 Title: Convert Identifiers in Biological Databases
-Version: 0.3.1
+Version: 0.3.2
 Date: 2022-03-08
 Authors@R: 
     person("Shixiang", "Wang", , "w_shixiang@163.com", role = c("aut", "cre"),

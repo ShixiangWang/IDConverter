@@ -4,12 +4,24 @@
 \alias{parse_gdc_file_uuid}
 \title{Parse Sample ID from GDC Portal File UUID}
 \usage{
-parse_gdc_file_uuid(x, legacy = FALSE, token = NULL, max_try = 5L)
+parse_gdc_file_uuid(
+  x,
+  legacy = FALSE,
+  fields = "cases.samples.submitter_id,cases.samples.sample_type,file_id",
+  token = NULL,
+  max_try = 5L
+)
 }
 \arguments{
 \item{x}{a GDC manifest file or a vector of file UUIDs.}
 
 \item{legacy}{if use GDC legacy data.}
+
+\item{fields}{a list of fields to query.
+If it is a string, then fields should be separated by comma.
+It could also be a vector.
+See \url{https://docs.gdc.cancer.gov/API/Users_Guide/Appendix_A_Available_Fields/#file-fields}
+for list.}
 
 \item{token}{the token used for querying.}
 
