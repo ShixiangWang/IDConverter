@@ -1,7 +1,7 @@
 Package: IDConverter
 Title: Convert Identifiers in Biological Databases
 Version: 0.3.2
-Date: 2022-03-08
+Date: 2022-06-03
 Authors@R: 
     person("Shixiang", "Wang", , "w_shixiang@163.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9855-7357"))
@@ -9,7 +9,7 @@ Maintainer: Shixiang Wang <w_shixiang@163.com>
 Description: Identifiers in biological databases connect different levels
     of metadata, phenotype data or genotype data. This tool is designed to
     easily convert identifiers within or between different biological
-    databases.
+    databases (Wang, Shixiang, et al. (2021) <DOI:10.1371/journal.pgen.1009557>).
 License: MIT + file LICENSE
 URL: https://github.com/ShixiangWang/IDConverter
 BugReports: https://github.com/ShixiangWang/IDConverter/issues
