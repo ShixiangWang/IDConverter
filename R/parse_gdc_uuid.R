@@ -28,6 +28,12 @@ parse_gdc_file_uuid <- function(x, legacy = FALSE,
                                 token = NULL, max_try = 5L) {
   if (length(x) == 1 && file.exists(x)) {
     x <- data.table::fread(x)[[1]]
+  } else {
+    if (any(grepl("[\\./]", x))) {
+      stop("it seems your input file path does not exist!")
+    } else if (!all(nchar(x) == 36)) {
+      stop("all GDC file IDs have 35 chars!")
+    }
   }
   message("Querying info from GDC portal API: https://api.gdc.cancer.gov")
 
