@@ -6,7 +6,7 @@
 \alias{IDConverter-package}
 \title{IDConverter: Convert Identifiers in Biological Databases}
 \description{
-Identifiers in biological databases connect different levels of metadata, phenotype data or genotype data. This tool is designed to easily convert identifiers within or between different biological databases.
+Identifiers in biological databases connect different levels of metadata, phenotype data or genotype data. This tool is designed to easily convert identifiers within or between different biological databases (Wang, Shixiang, et al. (2021) \doi{10.1371/journal.pgen.1009557}).
 }
 \seealso{
 Useful links:

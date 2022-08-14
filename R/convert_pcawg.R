@@ -30,11 +30,11 @@
 #' convert_pcawg("SA5213")
 #' }
 #' @testexamples
-#' expect_equal(x, "DO804")
+#' if (!is.null(x)) expect_equal(x, "DO804")
 #' expect_error(convert_pcawg("SA5213"))
 #' expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "icgc_specimen_id"))
 #' expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "xx"))
-#' expect_is(y, "data.table")
+#' if (!is.null(y)) expect_is(y, "data.table")
 convert_pcawg <- function(x,
                           from = "icgc_specimen_id",
                           to = "icgc_donor_id",
@@ -52,5 +52,9 @@ convert_pcawg <- function(x,
   }
 
   dt <- load_data(db)
+  if (is.null(dt)) {
+    warning("Failed converting the data.", immediate. = TRUE)
+    return(invisible(NULL))
+  }
   convert(dt, x, from, to, multiple)
 }

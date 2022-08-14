@@ -19,6 +19,8 @@ query_remote_data <- function(x) {
     },
     error = function(e) {
       warning("Failed downloading the data.", immediate. = TRUE)
+      message("removing downloaded file")
+      file.remove(x_dest)
       FALSE
     }
   )
@@ -54,6 +56,12 @@ load_data <- function(x) {
   # data = new.env(parent = emptyenv())
   # load(load_file, envir = data)
   # get(ls(data), envir = data)
-  load(load_file)
-  get(setdiff(ls(), c("load_file", "ok", "x")))
+  tryCatch({
+    load(load_file)
+    get(setdiff(ls(), c("load_file", "ok", "x")))
+  },
+  error = function(e) {
+    warning("Failed loading the data.", immediate. = TRUE)
+    NULL
+  })
 }

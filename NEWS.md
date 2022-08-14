@@ -1,3 +1,7 @@
+# IDConverter 0.3.3
+
+* Printed more reasonable message when network is not available.
+
 # IDConverter 0.3.2
 
 * Enhanced `parse_gdc_file_uuid()`.

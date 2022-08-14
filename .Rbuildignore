@@ -6,3 +6,6 @@
 ^codecov\.yml$
 inst/extdata/icgc.rda
 ^CRAN-SUBMISSION$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

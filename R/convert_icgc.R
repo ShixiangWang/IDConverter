@@ -19,7 +19,7 @@
 #' convert_icgc("SA170678")
 #' }
 #' @testexamples
-#' expect_equal(x, "DO13695")
+#' if (!is.null(x)) expect_equal(x, "DO13695")
 #' expect_error(convert_pcawg("SA170678"))
 #' expect_error(convert_icgc("SP29019", from = "icgc_specimen_id", to = "icgc_specimen_id"))
 convert_icgc <- function(x,
@@ -32,5 +32,9 @@ convert_icgc <- function(x,
   }
 
   dt <- load_data("icgc")
+  if (is.null(dt)) {
+    warning("Failed converting the data.", immediate. = TRUE)
+    return(invisible(NULL))
+  }
   convert(dt, x, from, to, multiple)
 }

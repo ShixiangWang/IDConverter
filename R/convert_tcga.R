@@ -19,7 +19,7 @@
 #' convert_tcga("TCGA-02-0001-10A-01W-0188-10")
 #' }
 #' @testexamples
-#' expect_equal(x, "TCGA-02-0001")
+#' if (!is.null(x)) expect_equal(x, "TCGA-02-0001")
 #' expect_error(convert_pcawg("TCGA-02-0001-10A-01W-0188-10"))
 convert_tcga <- function(x,
                          from = "sample_id",
@@ -31,5 +31,9 @@ convert_tcga <- function(x,
   }
 
   dt <- load_data("tcga")
+  if (is.null(dt)) {
+    warning("Failed converting the data.", immediate. = TRUE)
+    return(invisible(NULL))
+  }
   convert(dt, x, from, to, multiple)
 }
