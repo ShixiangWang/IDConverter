@@ -21,6 +21,11 @@ convert_hm_genes <- function(IDs, type = c("ensembl", "symbol"),
   type <- match.arg(type)
   genome_build <- match.arg(genome_build)
   ref_data <- get_common_ref_data(genome_build)
+  if (is.null(ref_data)) {
+    message("Failed obtaining the reference data.")
+    return(invisible(NULL))
+  }
+
   if (genome_build %in% c("hg38", "hg19")) {
     ref_data$gene_id <- substr(ref_data$gene_id, 1, 15)
   } else {

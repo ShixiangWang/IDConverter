@@ -3,13 +3,13 @@
 context("File R/convert_tcga.R: @testexamples")
 
 test_that("Function convert_tcga() @ L24", {
-  
-  
+
+
   x <- convert_tcga("TCGA-02-0001-10")
   x
-  
-  
+
+
   if (!is.null(x)) expect_equal(x, "TCGA-02-0001")
-  expect_error(convert_pcawg("TCGA-02-0001-10A-01W-0188-10"))
+  if (!is.null(x)) expect_error(convert_pcawg("TCGA-02-0001-10A-01W-0188-10"))
 })
 

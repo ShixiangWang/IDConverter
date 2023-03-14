@@ -1,3 +1,7 @@
+# IDConverter 0.3.4
+
+* Suppressed the check warning and error.
+
 # IDConverter 0.3.3
 
 * Printed more reasonable message when network is not available.

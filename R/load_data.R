@@ -11,16 +11,18 @@ query_remote_data <- function(x) {
   message("Downloading ", x_url, " to ", x_dest)
   tryCatch(
     {
-      download.file(
-        url = x_url,
-        destfile = x_dest
+      suppressWarnings(
+        download.file(
+          url = x_url,
+          destfile = x_dest
+        )
       )
       TRUE
     },
     error = function(e) {
-      warning("Failed downloading the data.", immediate. = TRUE)
-      message("removing downloaded file")
-      file.remove(x_dest)
+      message("Failed downloading the data.")
+      message("Removing downloaded file")
+      if (file.exists(x_dest)) file.remove(x_dest)
       FALSE
     }
   )
@@ -61,7 +63,7 @@ load_data <- function(x) {
     get(setdiff(ls(), c("load_file", "ok", "x")))
   },
   error = function(e) {
-    warning("Failed loading the data.", immediate. = TRUE)
+    message("Failed loading the data.")
     NULL
   })
 }

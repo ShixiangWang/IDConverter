@@ -33,7 +33,7 @@ convert_icgc <- function(x,
 
   dt <- load_data("icgc")
   if (is.null(dt)) {
-    warning("Failed converting the data.", immediate. = TRUE)
+    message("Failed converting the data.")
     return(invisible(NULL))
   }
   convert(dt, x, from, to, multiple)

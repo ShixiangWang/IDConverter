@@ -53,7 +53,7 @@ convert_pcawg <- function(x,
 
   dt <- load_data(db)
   if (is.null(dt)) {
-    warning("Failed converting the data.", immediate. = TRUE)
+    message("Failed converting the data.")
     return(invisible(NULL))
   }
   convert(dt, x, from, to, multiple)

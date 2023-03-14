@@ -3,22 +3,22 @@
 context("File R/convert_pcawg.R: @testexamples")
 
 test_that("Function convert_pcawg() @ L38", {
-  
-  
+
+
   x <- convert_pcawg("SP1677")
   x
-  
+
   y <- convert_pcawg("DO804",
     from = "icgc_donor_id",
     to = "icgc_specimen_id", multiple = TRUE
   )
   y
-  
-  
+
+
   if (!is.null(x)) expect_equal(x, "DO804")
-  expect_error(convert_pcawg("SA5213"))
-  expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "icgc_specimen_id"))
-  expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "xx"))
+  if (!is.null(x)) expect_error(convert_pcawg("SA5213"))
+  if (!is.null(x)) expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "icgc_specimen_id"))
+  if (!is.null(x)) expect_error(convert_icgc("SP1677", from = "icgc_specimen_id", to = "xx"))
   if (!is.null(y)) expect_is(y, "data.table")
 })
 
