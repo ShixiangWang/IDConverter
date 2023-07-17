@@ -5,10 +5,6 @@
 
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/IDConverter)](https://cran.r-project.org/package=IDConverter)
-[![Codecov test
-coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ShixiangWang/IDConverter?branch=master)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/IDConverter?color=orange)](https://cran.r-project.org/package=IDConverter)
@@ -19,20 +15,13 @@ databases. Currently, I mainly use it for promoting cancer study.
 
 ## Installation
 
-You can install the released version of IDConverter from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("IDConverter")
-```
-
-Or install the latest version of IDConverter in GitHub with:
+Install the latest version of IDConverter in GitHub with:
 
 ``` r
 remotes::install_github("ShixiangWang/IDConverter")
 ```
 
-Or Gitee (better in China):
+Or Gitee (better in China, but not updated anymore):
 
 ``` r
 remotes::install_git("https://gitee.com/ShixiangWang/IDConverter")
@@ -80,7 +69,6 @@ options(IDConverter.datapath = system.file("extdata", package = "IDConverter"))
 
 ``` r
 x <- convert_tcga("TCGA-02-0001-10")
-#> Downloading https://zenodo.org/record/6342397/files/tcga.rda to /Users/wsx/Library/R/IDConverter/extdata/tcga.rda
 x
 #> [1] "TCGA-02-0001"
 ```
@@ -89,7 +77,6 @@ x
 
 ``` r
 x <- convert_pcawg("SP1677")
-#> Downloading https://zenodo.org/record/6342397/files/pcawg_full.rda to /Users/wsx/Library/R/IDConverter/extdata/pcawg_full.rda
 x
 #> [1] "DO804"
 ```
@@ -98,7 +85,6 @@ x
 
 ``` r
 x <- convert_icgc("SP29019")
-#> Downloading https://zenodo.org/record/6342397/files/icgc.rda to /Users/wsx/Library/R/IDConverter/extdata/icgc.rda
 x
 #> [1] "DO13695"
 ```
@@ -111,25 +97,27 @@ convert_hm_genes(c("TP53", "KRAS", "EGFR", "MYC"), type = "symbol")
 
 # Or use data from annotables
 ls_annotables()
-#> Downloading https://zenodo.org/record/6342397/files/ensembl_version.rda to /Users/wsx/Library/R/IDConverter/extdata/ensembl_version.rda
 #> Version: Ensembl Genes 105
 #>  [1] "bdgp6"            "bdgp6_tx2gene"    "galgal5"          "galgal5_tx2gene" 
 #>  [5] "grch37"           "grch37_tx2gene"   "grch38"           "grch38_tx2gene"  
 #>  [9] "grcm38"           "grcm38_tx2gene"   "mmul801"          "mmul801_tx2gene" 
 #> [13] "rnor6"            "rnor6_tx2gene"    "wbcel235"         "wbcel235_tx2gene"
 grch37 = load_data("grch37")
-#> Downloading https://zenodo.org/record/6342397/files/grch37.rda to /Users/wsx/Library/R/IDConverter/extdata/grch37.rda
 head(grch37)
-#> # A tibble: 6 × 9
-#>   ensgene         entrez symbol   chr       start     end strand biotype descr…¹
-#>   <chr>            <int> <chr>    <chr>     <int>   <int>  <int> <chr>   <chr>  
-#> 1 ENSG00000000003   7105 TSPAN6   X     100627108  1.01e8     -1 protei… tetras…
-#> 2 ENSG00000000005  64102 TNMD     X     100584936  1.01e8      1 protei… tenomo…
-#> 3 ENSG00000000419   8813 DPM1     20     50934867  5.10e7     -1 protei… dolich…
-#> 4 ENSG00000000457  57147 SCYL3    1     169849631  1.70e8     -1 protei… SCY1 l…
-#> 5 ENSG00000000460  55732 C1orf112 1     169662007  1.70e8      1 protei… chromo…
-#> 6 ENSG00000000938   2268 FGR      1      27612064  2.76e7     -1 protei… FGR pr…
-#> # … with abbreviated variable name ¹​description
+#>           ensgene entrez   symbol chr     start       end strand        biotype
+#> 1 ENSG00000000003   7105   TSPAN6   X 100627108 100639991     -1 protein_coding
+#> 2 ENSG00000000005  64102     TNMD   X 100584936 100599885      1 protein_coding
+#> 3 ENSG00000000419   8813     DPM1  20  50934867  50959140     -1 protein_coding
+#> 4 ENSG00000000457  57147    SCYL3   1 169849631 169894267     -1 protein_coding
+#> 5 ENSG00000000460  55732 C1orf112   1 169662007 169854080      1 protein_coding
+#> 6 ENSG00000000938   2268      FGR   1  27612064  27635185     -1 protein_coding
+#>                                                   description
+#> 1                                               tetraspanin 6
+#> 2                                                 tenomodulin
+#> 3 dolichyl-phosphate mannosyltransferase subunit 1, catalytic
+#> 4                                    SCY1 like pseudokinase 3
+#> 5                         chromosome 1 open reading frame 112
+#> 6              FGR proto-oncogene, Src family tyrosine kinase
 convert_custom(c("TP53", "KRAS", "EGFR", "MYC"),
                from = "symbol", to = "entrez", dt = grch37)
 #> [1] "7157" "3845" "1956" "4609"

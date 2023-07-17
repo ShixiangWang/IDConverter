@@ -16,9 +16,6 @@ knitr::opts_chunk$set(
 # IDConverter
 
 <!-- badges: start -->
-[![CRAN
-status](https://www.r-pkg.org/badges/version/IDConverter)](https://cran.r-project.org/package=IDConverter)
-[![Codecov test coverage](https://codecov.io/gh/ShixiangWang/IDConverter/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ShixiangWang/IDConverter?branch=master)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/IDConverter?color=orange)](https://cran.r-project.org/package=IDConverter)
 <!-- badges: end -->
@@ -28,19 +25,13 @@ Currently, I mainly use it for promoting cancer study.
 
 ## Installation
 
-You can install the released version of IDConverter from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("IDConverter")
-```
-
-Or install the latest version of IDConverter in GitHub with:
+Install the latest version of IDConverter in GitHub with:
 
 ``` r
 remotes::install_github("ShixiangWang/IDConverter")
 ```
 
-Or Gitee (better in China):
+Or Gitee (better in China, but not updated anymore):
 
 ```r
 remotes::install_git("https://gitee.com/ShixiangWang/IDConverter")
