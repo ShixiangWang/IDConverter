@@ -1,3 +1,8 @@
+# IDConverter 0.3.5
+
+* Removed from CRAN.
+* Removed hard code of the `.data_path` in the package.
+
 # IDConverter 0.3.4
 
 * Suppressed the check warning and error.
