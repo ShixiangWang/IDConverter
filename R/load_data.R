@@ -1,11 +1,12 @@
-.data_path <- getOption("IDConverter.datapath", tempdir())
-
+.data_path <- function() {
+  getOption("IDConverter.datapath", tempdir())
+}
 
 # Copy from sigminer
 query_remote_data <- function(x) {
   x_url <- paste0("https://zenodo.org/record/6342397/files/", x)
   # dir_dest <- system.file("extdata", package = "IDConverter")
-  dir_dest <- getOption("IDConverter.datapath", .data_path)
+  dir_dest <- getOption("IDConverter.datapath", .data_path())
   if (!dir.exists(dir_dest)) dir.create(dir_dest, recursive = TRUE)
   x_dest <- file.path(dir_dest, x)
   message("Downloading ", x_url, " to ", x_dest)
@@ -47,7 +48,7 @@ query_remote_data <- function(x) {
 #' }
 load_data <- function(x) {
   load_file <- file.path(
-    getOption("IDConverter.datapath", .data_path),
+    getOption("IDConverter.datapath", .data_path()),
     paste0(x, ".rda")
   )
   ok <- TRUE

@@ -49,17 +49,17 @@ get_common_ref_data <- function(genome_build = c("hg38", "hg19", "mm10", "mm9"))
   gene_file <- switch(genome_build,
     mm9 = file.path(
       # system.file("extdata", package = "IDConverter"),
-      getOption("IDConverter.datapath", .data_path),
+      getOption("IDConverter.datapath", .data_path()),
       "mouse_mm9_gene_info.rds"
     ),
     mm10 = file.path(
       # system.file("extdata", package = "IDConverter"),
-      getOption("IDConverter.datapath", .data_path),
+      getOption("IDConverter.datapath", .data_path()),
       "mouse_mm10_gene_info.rds"
     ),
     file.path(
       # system.file("extdata", package = "IDConverter"),
-      getOption("IDConverter.datapath", .data_path),
+      getOption("IDConverter.datapath", .data_path()),
       paste0("human_", genome_build, "_gene_info.rds")
     )
   )
